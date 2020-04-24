@@ -28,7 +28,7 @@ def run_mnist_fully_connected_experiment():
                       'mnist/data/bob_test_')
 
 
-run_mnist_fully_connected_experiment()
+# run_mnist_fully_connected_experiment()
 
 
 def run_mnist_conv_experiment():
