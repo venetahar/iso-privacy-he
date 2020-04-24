@@ -1,5 +1,4 @@
 from tensorflow.keras.datasets import mnist
-from tensorflow.keras.models import load_model
 from tensorflow.keras.utils import to_categorical
 
 from common.model_factory import ModelFactory
@@ -47,10 +46,10 @@ def normalize(data):
     return (data/255.0 - MNIST_NORM_MEAN) / MNIST_NORM_STD
 
 
-def test_saved_model(model_path):
-    (_, _), (test_data, test_labels) = mnist.load_data()
-    test_data, test_labels = preprocess(test_data, test_labels)
-
-    new_model = DataUtils.load_model(model_path + '.pb')
-    new_model.evaluate(test_data, test_labels)
-
+# def test_saved_model(model_path):
+#     (_, _), (test_data, test_labels) = mnist.load_data()
+#     test_data, test_labels = preprocess(test_data, test_labels)
+#
+#     new_model = DataUtils.load_model(model_path + '.pb')
+#     new_model.evaluate(test_data, test_labels)
+#

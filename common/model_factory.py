@@ -1,6 +1,6 @@
 # from malaria.common.conv_pool_model import ConvPoolModel
 from mnist.common.conv_model import conv_model
-from mnist.common.fully_connected_model import FullyConnectedModel
+from mnist.common.fully_connected_model import fully_connected_model
 
 FULLY_CONNECTED_MODEL_TYPE = 'FullyConnected3'
 CONV_MODEL_TYPE = 'Conv1'
@@ -22,7 +22,7 @@ class ModelFactory:
         :return: An instantiated model.
         """
         if model_type == FULLY_CONNECTED_MODEL_TYPE:
-            model = FullyConnectedModel(input_shape, dense_units=[128, 128], num_classes=num_classes).model
+            model = fully_connected_model(input_shape, dense_units=[128, 128], num_classes=num_classes)
         elif model_type == CONV_MODEL_TYPE:
             model = conv_model(input_shape, kernel_size=5, stride=2, out_channels=5, avg_pool_size=2,
                                dense_units=[100], num_classes=10)

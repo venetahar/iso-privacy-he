@@ -5,7 +5,7 @@ from tensorflow .compat.v1 import set_random_seed
 set_random_seed(2)
 
 from common.model_factory import CONV_MODEL_TYPE, FULLY_CONNECTED_MODEL_TYPE
-from mnist.common.mnist_training import test_saved_model, train_mnist_model
+from mnist.common.mnist_training import train_mnist_model
 
 MNIST_MODEL_PATH = 'mnist/models/'
 MNIST_FULLY_CONNECTED_MODEL_NAME = 'alice_fc3_model'
@@ -26,7 +26,7 @@ def run_mnist_fully_connected_experiment(should_retrain_model=False):
                           'mnist/data/bob_test_')
     # test_saved_model(MNIST_MODEL_PATH + MNIST_FULLY_CONNECTED_MODEL_NAME)
 
-# run_mnist_fully_connected_experiment(True)
+run_mnist_fully_connected_experiment(True)
 
 def run_mnist_conv_experiment(should_retrain_model=False):
     if should_retrain_model:
@@ -34,4 +34,4 @@ def run_mnist_conv_experiment(should_retrain_model=False):
                           'mnist/data/bob_test_')
     # test_saved_model(MNIST_MODEL_PATH + MNIST_FULLY_CONNECTED_MODEL_NAME)
 
-run_mnist_conv_experiment(True)
+# run_mnist_conv_experiment(True)
