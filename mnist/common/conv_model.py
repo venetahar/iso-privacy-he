@@ -8,7 +8,7 @@ def conv_model(input_shape, kernel_size, stride, out_channels, avg_pool_size, de
     """
     Creates a convolutional model.
     """
-    input_x = Input(input_shape)
+    input_x = Input(input_shape, name="input")
     x = Conv2D(out_channels, kernel_size=kernel_size, activation='relu', strides=stride, padding='valid')(input_x)
     x = AveragePooling2D(pool_size=avg_pool_size)(x)
     x_shape = x.get_shape()[1:]
