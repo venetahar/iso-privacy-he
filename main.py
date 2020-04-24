@@ -24,6 +24,14 @@ def run_mnist_fully_connected_experiment(should_retrain_model=False):
     if should_retrain_model:
         train_mnist_model(FULLY_CONNECTED_MODEL_TYPE, MNIST_MODEL_PATH, MNIST_FULLY_CONNECTED_MODEL_NAME,
                           'mnist/data/bob_test_')
-    test_saved_model(MNIST_MODEL_PATH + MNIST_FULLY_CONNECTED_MODEL_NAME)
+    # test_saved_model(MNIST_MODEL_PATH + MNIST_FULLY_CONNECTED_MODEL_NAME)
 
-run_mnist_fully_connected_experiment(True)
+# run_mnist_fully_connected_experiment(True)
+
+def run_mnist_conv_experiment(should_retrain_model=False):
+    if should_retrain_model:
+        train_mnist_model(CONV_MODEL_TYPE, MNIST_MODEL_PATH, MNIST_CONV_MODEL_NAME,
+                          'mnist/data/bob_test_')
+    # test_saved_model(MNIST_MODEL_PATH + MNIST_FULLY_CONNECTED_MODEL_NAME)
+
+run_mnist_conv_experiment(True)

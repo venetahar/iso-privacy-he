@@ -1,5 +1,5 @@
 from tensorflow.keras import Sequential
-from tensorflow.keras.layers import Conv2D, AveragePooling2D, Flatten, Dense
+from tensorflow.keras.layers import Conv2D, AveragePooling2D, Flatten, Dense, Input
 
 
 class ConvModel:
@@ -19,7 +19,7 @@ class ConvModel:
         :param input_shape: The input shape.
         """
         self.model = Sequential()
-
+        self.model.add(Input(input_shape, name="input"))
         self.model.add(
             Conv2D(out_channels, kernel_size=kernel_size, activation='relu', strides=stride, padding='valid',
                    input_shape=input_shape)
@@ -33,4 +33,4 @@ class ConvModel:
             self.model.add(
                 Dense(dense_unit, activation='relu')
             )
-        self.model.add(Dense(num_classes, activation='softmax'))
+        self.model.add(Dense(num_classes, name="output"))
