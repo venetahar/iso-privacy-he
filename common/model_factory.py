@@ -1,4 +1,4 @@
-# from malaria.common.conv_pool_model import ConvPoolModel
+from malaria.common.conv_pool_model import conv_pool_model
 from mnist.common.conv_model import conv_model
 from mnist.common.fully_connected_model import fully_connected_model
 
@@ -26,9 +26,9 @@ class ModelFactory:
         elif model_type == CONV_MODEL_TYPE:
             model = conv_model(input_shape, kernel_size=5, stride=2, out_channels=5, avg_pool_size=2,
                                dense_units=[100], num_classes=10)
-        # elif model_type == CONV_POOL_MODEL_TYPE:
-        #     model = ConvPoolModel(input_shape=input_shape, kernel_sizes=[5, 5], channels=[36, 36],
-        #                           stride=1, avg_pool_sizes=[2, 2], dense_units=[72], num_classes=2).model
+        elif model_type == CONV_POOL_MODEL_TYPE:
+            model = conv_pool_model(input_shape=input_shape, kernel_sizes=[5, 5], channels=[36, 36],
+                                    stride=1, avg_pool_sizes=[2, 2], dense_units=[72], num_classes=2)
         else:
             raise ValueError("Invalid model_type provided. ")
 

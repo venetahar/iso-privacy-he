@@ -11,6 +11,7 @@ from mnist.common.constants import NUM_CLASSES, TRAINING_PARAMS, MNIST_WIDTH, MN
 def train_mnist_model(model_type, model_path, model_name, target_data_path_prefix):
     """
     Trains a MNIST model and saves the model graph.
+    :param target_data_path_prefix:
     :param model_name:
     :param model_path: The model path.
     :param model_type: The model type to use.

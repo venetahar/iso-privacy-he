@@ -6,15 +6,6 @@ from tensorflow.keras import backend as K
 class DataUtils:
 
     @staticmethod
-    def save_model(model_path, model):
-        """
-        Saves the model in a default keras h5 format.
-        :param model_path: The model path.
-        :param model: The model.
-        """
-        model.save(model_path)
-
-    @staticmethod
     def save_graph(model, model_path, model_name='alice_model.pb'):
         """
         Saves the model graph as .pb.
