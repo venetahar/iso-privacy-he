@@ -24,7 +24,6 @@ def train_mnist_model(model_type, model_path, model_name, target_data_path_prefi
     model_training = ModelTraining(model, TRAINING_PARAMS)
     model_training.train(training_data, training_labels)
     model_training.evaluate_plain_text(test_data, test_labels)
-    DataUtils.save_model(model_path=model_path + model_name + '.h5', model=model)
     DataUtils.save_data(test_data, test_labels, target_data_path_prefix)
     DataUtils.save_graph(model, model_path, model_name + '.pb')
 

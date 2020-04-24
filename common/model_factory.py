@@ -1,5 +1,5 @@
 # from malaria.common.conv_pool_model import ConvPoolModel
-from mnist.common.conv_model import ConvModel
+from mnist.common.conv_model import conv_model
 from mnist.common.fully_connected_model import FullyConnectedModel
 
 FULLY_CONNECTED_MODEL_TYPE = 'FullyConnected3'
@@ -24,8 +24,8 @@ class ModelFactory:
         if model_type == FULLY_CONNECTED_MODEL_TYPE:
             model = FullyConnectedModel(input_shape, dense_units=[128, 128], num_classes=num_classes).model
         elif model_type == CONV_MODEL_TYPE:
-            model = ConvModel(input_shape, kernel_size=5, stride=2, out_channels=5, avg_pool_size=2,
-                              dense_units=[100], num_classes=10).model
+            model = conv_model(input_shape, kernel_size=5, stride=2, out_channels=5, avg_pool_size=2,
+                               dense_units=[100], num_classes=10)
         # elif model_type == CONV_POOL_MODEL_TYPE:
         #     model = ConvPoolModel(input_shape=input_shape, kernel_sizes=[5, 5], channels=[36, 36],
         #                           stride=1, avg_pool_sizes=[2, 2], dense_units=[72], num_classes=2).model
