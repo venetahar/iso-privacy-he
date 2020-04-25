@@ -24,3 +24,5 @@ if __name__ == "__main__":
         correct_predictions += perform_inference(test_data[index: new_index],
                                                  test_data_labels[index: new_index], parameters)
         index = new_index
+    print('HE-Transformer: {}/{} Test set: Accuracy: ({:.4f})'.format(correct_predictions, num_samples,
+                                                                      correct_predictions / num_samples))
