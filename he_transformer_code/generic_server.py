@@ -20,11 +20,15 @@ def perform_inference(test_data, test_labels, parameters):
 
     config = build_server_config(parameters, model_input.name)
     print("Config")
+    index = 0
     with tf.compat.v1.Session(config=config) as sess:
         print("Evaluating model.")
         sess.run(tf.compat.v1.global_variables_initializer())
-        prediction_scores = model_output.eval(feed_dict={model_input: test_data})
-        print("Finished obtaining predictions.")
+        while index < 2:
+            prediction_scores = model_output.eval(feed_dict={model_input: test_data})
+            print("Finished obtaining predictions.")
+
+            index += 1
 
     if not parameters.enable_client:
         correct_predictions = calculate_num_correct_predictions(prediction_scores, test_labels)
