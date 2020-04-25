@@ -20,6 +20,7 @@ def perform_inference(test_data, test_data_labels, parameters):
     print("Got predictions with shape: {}".format(prediction_scores.shape))
     correct_predictions = calculate_num_correct_predictions(prediction_scores, test_data_labels)
     print('HE-Transformer: Test set: Accuracy: ({:.4f})'.format(correct_predictions / parameters.batch_size))
+    return correct_predictions
 
 
 def calculate_num_correct_predictions(prediction_scores, one_hot_labels):
