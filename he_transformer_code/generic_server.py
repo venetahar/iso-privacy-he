@@ -1,6 +1,5 @@
 import numpy as np
 import tensorflow as tf
-import ngraph_bridge
 
 from tensorflow.core.protobuf import rewriter_config_pb2
 
@@ -18,8 +17,10 @@ def perform_inference(test_data, test_labels, parameters):
 
     config = build_server_config(parameters, model_input.name)
     with tf.compat.v1.Session(config=config) as sess:
+        print("Evaluating model.")
         sess.run(tf.compat.v1.global_variables_initializer())
         prediction_scores = model_output.eval(feed_dict={model_input: test_data})
+        print("Finished obtaining predictions.")
 
     if not parameters.enable_client:
         correct_predictions = calculate_num_correct_predictions(prediction_scores, test_labels)
