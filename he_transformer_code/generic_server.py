@@ -13,10 +13,13 @@ def perform_inference(test_data, test_labels, parameters):
 
     model_input = tf.compat.v1.get_default_graph().get_tensor_by_name(
         parameters.input_node)
+    print("Model input")
     model_output = tf.compat.v1.get_default_graph().get_tensor_by_name(
         parameters.output_node)
+    print("Model output")
 
     config = build_server_config(parameters, model_input.name)
+    print("Config")
     with tf.compat.v1.Session(config=config) as sess:
         print("Evaluating model.")
         sess.run(tf.compat.v1.global_variables_initializer())
