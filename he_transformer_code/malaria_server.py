@@ -19,4 +19,7 @@ if __name__ == "__main__":
     test_data = np.load('malaria/bob_test_data.npy')
     test_data_labels = np.load('malaria/bob_test_data_labels.npy')
 
-    perform_inference(test_data[:parameters.batch_size], test_data_labels[:parameters.batch_size], parameters)
+    start_batch = parameters.start_batch
+    end_batch = start_batch + parameters.batch_size
+    perform_inference(test_data[start_batch: end_batch], test_data_labels[start_batch: end_batch], parameters)
+

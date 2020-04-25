@@ -13,22 +13,15 @@ def perform_inference(test_data, test_labels, parameters):
 
     model_input = tf.compat.v1.get_default_graph().get_tensor_by_name(
         parameters.input_node)
-    print("Model input")
     model_output = tf.compat.v1.get_default_graph().get_tensor_by_name(
         parameters.output_node)
-    print("Model output")
 
     config = build_server_config(parameters, model_input.name)
-    print("Config")
-    index = 0
     with tf.compat.v1.Session(config=config) as sess:
         print("Evaluating model.")
         sess.run(tf.compat.v1.global_variables_initializer())
-        while index < 2:
-            prediction_scores = model_output.eval(feed_dict={model_input: test_data})
-            print("Finished obtaining predictions.")
-
-            index += 1
+        prediction_scores = model_output.eval(feed_dict={model_input: test_data})
+        print("Finished obtaining predictions of shape {}".format(prediction_scores.shape))
 
     if not parameters.enable_client:
         correct_predictions = calculate_num_correct_predictions(prediction_scores, test_labels)
