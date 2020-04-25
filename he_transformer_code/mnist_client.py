@@ -3,7 +3,7 @@ import numpy as np
 from argument_parsers import client_argument_parser
 from generic_client import perform_inference
 
-if __name__ == "main":
+if __name__ == "__main__":
     parameters, unparsed = client_argument_parser().parse_known_args()
     if unparsed:
         print("Supplied parameters cannot be parsed", unparsed)
