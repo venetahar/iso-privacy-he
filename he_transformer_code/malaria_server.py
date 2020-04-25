@@ -1,7 +1,7 @@
 import numpy as np
 
-from he_transformer_code.argument_parsers import server_argument_parser
-from he_transformer_code.generic_server import perform_inference
+from argument_parsers import server_argument_parser
+from generic_server import perform_inference
 
 if __name__ == "__main__":
     parameters, unparsed = server_argument_parser().parse_known_args()
@@ -19,4 +19,4 @@ if __name__ == "__main__":
     test_data = np.load('malaria/bob_test_data.npy')
     test_data_labels = np.load('malaria/bob_test_data_labels.npy')
 
-    perform_inference(test_data, test_data_labels, parameters)
+    perform_inference(test_data[:parameters.batch_size], test_data_labels[:parameters.batch_size], parameters)

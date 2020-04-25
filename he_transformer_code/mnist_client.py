@@ -1,7 +1,7 @@
 import numpy as np
 
-from he_transformer_code.argument_parsers import client_argument_parser
-from he_transformer_code.generic_client import perform_inference
+from argument_parsers import client_argument_parser
+from generic_client import perform_inference
 
 if __name__ == "main":
     parameters, unparsed = client_argument_parser().parse_known_args()
@@ -12,4 +12,4 @@ if __name__ == "main":
     test_data = np.load('mnist/bob_test_data.npy')
     test_data_labels = np.load('mnist/bob_test_data_labels.npy')
 
-    perform_inference(test_data, test_data_labels, parameters)
+    perform_inference(test_data[:parameters.batch_size], test_data_labels[:parameters.batch_size], parameters)

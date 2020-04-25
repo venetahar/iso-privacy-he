@@ -4,7 +4,7 @@ import ngraph_bridge
 
 from tensorflow.core.protobuf import rewriter_config_pb2
 
-from he_transformer_code.utils import load_pb_model
+from utils import load_pb_model
 
 
 def perform_inference(test_data, test_labels, parameters):
