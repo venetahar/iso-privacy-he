@@ -1,5 +1,6 @@
 import numpy as np
 import tensorflow as tf
+import ngraph_bridge
 
 from tensorflow.core.protobuf import rewriter_config_pb2
 
