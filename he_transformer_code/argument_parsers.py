@@ -35,5 +35,6 @@ def server_argument_parser():
     parser.add_argument("--input_node", type=str, default="import/input:0", help="Tensor name of data input", )
     parser.add_argument("--output_node", type=str, default="import/output/BiasAdd:0",
                         help="Tensor name of model output", )
+    parser.add_argument("--num_requests", type=int, default=1, help="Number of request before shutting down the client.")
 
     return parser

@@ -25,7 +25,7 @@ MALARIA_BATCHED_TEST_DATA_FILE_PREFIX = 'bob_test_'
 
 def run_mnist_fully_connected_experiment():
     train_mnist_model(FULLY_CONNECTED_MODEL_TYPE, MNIST_MODEL_PATH, MNIST_FULLY_CONNECTED_MODEL_NAME,
-                      'he_transformer_code/mnist/data/bob_test_')
+                      'he_transformer_code/mnist/bob_test_')
 
 
 # run_mnist_fully_connected_experiment()
@@ -33,7 +33,7 @@ def run_mnist_fully_connected_experiment():
 
 def run_mnist_conv_experiment():
     train_mnist_model(CONV_MODEL_TYPE, MNIST_MODEL_PATH, MNIST_CONV_MODEL_NAME,
-                      'he_transformer_code/mnist/data/bob_test_')
+                      'he_transformer_code/mnist/bob_test_')
 
 
 def run_malaria_experiment():
@@ -42,4 +42,6 @@ def run_malaria_experiment():
                         target_data_path_prefix=MALARIA_TARGET_DATA_PATH_PREFIX)
 
 
-run_malaria_experiment()
+# run_malaria_experiment()
+# run_mnist_conv_experiment()
+run_mnist_fully_connected_experiment()
