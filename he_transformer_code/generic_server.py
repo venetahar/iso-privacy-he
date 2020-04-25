@@ -28,7 +28,9 @@ def perform_inference(test_data, test_labels, parameters):
 
     if not parameters.enable_client:
         correct_predictions = calculate_num_correct_predictions(prediction_scores, test_labels)
-        print('HE-Transformer: Test set: Accuracy: ({:.4f})'.format(correct_predictions / parameters.batch_size))
+        num_samples = test_labels.shape[0]
+        print('HE-Transformer: {}/{} Test set: Accuracy: ({:.4f})'.format(correct_predictions, num_samples,
+                                                                          correct_predictions / num_samples))
 
 
 def calculate_num_correct_predictions(prediction_scores, one_hot_labels):

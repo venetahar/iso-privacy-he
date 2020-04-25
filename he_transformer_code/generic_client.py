@@ -19,7 +19,9 @@ def perform_inference(test_data, test_data_labels, parameters):
     prediction_scores = np.array(client.get_results()).reshape(parameters.batch_size, num_classes)
     print("Got predictions with shape: {}".format(prediction_scores.shape))
     correct_predictions = calculate_num_correct_predictions(prediction_scores, test_data_labels)
-    print('HE-Transformer: Test set: Accuracy: ({:.4f})'.format(correct_predictions / parameters.batch_size))
+    num_samples = test_data_labels.shape[0]
+    print('HE-Transformer: {}/{} Test set: Accuracy: ({:.4f})'.format(correct_predictions, num_samples,
+                                                                      correct_predictions / num_samples))
     return correct_predictions
 
 
