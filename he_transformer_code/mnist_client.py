@@ -1,6 +1,6 @@
-from mnist_util import client_argument_parser
 import numpy as np
 
+from he_transformer_code.argument_parsers import client_argument_parser
 from he_transformer_code.generic_client import perform_inference
 
 if __name__ == "main":

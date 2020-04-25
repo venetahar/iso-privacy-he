@@ -1,10 +1,6 @@
-# Add parent directory to path
-from mnist_util import (
-    server_argument_parser,
-)
-
 import numpy as np
 
+from he_transformer_code.argument_parsers import server_argument_parser
 from he_transformer_code.generic_server import perform_inference
 
 if __name__ == "__main__":
@@ -20,7 +16,7 @@ if __name__ == "__main__":
     if parameters.model_file == "":
         raise Exception("parameters.model_file must be set")
 
-    test_data = np.load('malaria/bob_test_data_16.npy')
-    test_data_labels = np.load('malaria/bob_test_data_16_labels.npy')
+    test_data = np.load('malaria/bob_test_data.npy')
+    test_data_labels = np.load('malaria/bob_test_data_labels.npy')
 
     perform_inference(test_data, test_data_labels, parameters)

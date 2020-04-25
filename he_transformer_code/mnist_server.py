@@ -1,10 +1,6 @@
-# Add parent directory to path
-from mnist_util import (
-    server_argument_parser,
-)
-
 import numpy as np
 
+from he_transformer_code.argument_parsers import server_argument_parser
 from he_transformer_code.generic_server import perform_inference
 
 if __name__ == "__main__":

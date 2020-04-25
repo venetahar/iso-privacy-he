@@ -1,6 +1,6 @@
-from mnist_util import client_argument_parser
 import numpy as np
 
+from he_transformer_code.argument_parsers import client_argument_parser
 from he_transformer_code.generic_client import perform_inference
 
 if __name__ == "main":
@@ -9,7 +9,7 @@ if __name__ == "main":
         print("Supplied parameters cannot be parsed", unparsed)
         exit(1)
 
-    test_data = np.load('malaria/bob_test_data_16.npy')
-    test_data_labels = np.load('malaria/bob_test_data_16_labels.npy')
+    test_data = np.load('malaria/bob_test_data.npy')
+    test_data_labels = np.load('malaria/bob_test_data_labels.npy')
 
     perform_inference(test_data, test_data_labels, parameters)
