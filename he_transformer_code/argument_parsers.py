@@ -10,7 +10,6 @@ def client_argument_parser():
                         help='"encrypt" to encrypt client data, "plain" to not encrypt. Default encrypt.', )
     parser.add_argument("--tensor_name", type=str, default="import/input",
                         help="Input tensor name. Default import/input")
-    parser.add_argument("--start_batch", type=int, default=0, help="Test data start index. Default 0.")
 
     return parser
 
@@ -30,7 +29,6 @@ def server_argument_parser():
     parser.add_argument("--encrypt_server_data", type=bool, default=False,
                         help="Encrypt server data (should not be used when enable_client is used)", )
     parser.add_argument("--pack_data", type=bool, default=True, help="Use plaintext packing on data")
-    parser.add_argument("--start_batch", type=int, default=0, help="Test data start index")
     parser.add_argument("--model_file", type=str, default="", help="Filename of saved protobuf model")
     parser.add_argument("--input_node", type=str, default="import/input:0", help="Tensor name of data input", )
     parser.add_argument("--output_node", type=str, default="import/output/BiasAdd:0",
