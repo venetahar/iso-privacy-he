@@ -15,7 +15,8 @@ if __name__ == "__main__":
     start_batch = parameters.start_batch
     end_batch = start_batch + parameters.batch_size
 
-    if parameters.batch_mode:
+    if parameters.batch_mode is True:
+        print("Batch mode on")
         num_samples = test_data.shape[0]
         index = 0
         correct_predictions = 0
@@ -26,5 +27,6 @@ if __name__ == "__main__":
         print('HE-Transformer: {}/{} Test set: Accuracy: ({:.4f})'.format(correct_predictions, num_samples,
                                                                           correct_predictions / num_samples))
     else:
+        print("Batch mode off")
         perform_inference(test_data[start_batch: end_batch], test_data_labels[start_batch: end_batch], parameters)
 
