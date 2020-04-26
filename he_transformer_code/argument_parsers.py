@@ -11,6 +11,8 @@ def client_argument_parser():
     parser.add_argument("--tensor_name", type=str, default="import/input",
                         help="Input tensor name. Default import/input")
     parser.add_argument("--start_batch", type=int, default=0, help="Test data start index. Default 0.")
+    parser.add_argument("--batch_mode", type=bool, default=False,
+                        help="Whether it should iterate over all the data in batches. Default: False")
 
     return parser
 

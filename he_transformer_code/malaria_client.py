@@ -14,15 +14,17 @@ if __name__ == "__main__":
 
     start_batch = parameters.start_batch
     end_batch = start_batch + parameters.batch_size
-    current_requests = 0
 
-    num_samples = test_data.shape[0]
-    index = 0
-    correct_predictions = 0
-    while index < num_samples:
-        new_index = index + parameters.batch_size if index + parameters.batch_size < num_samples else num_samples
-        correct_predictions += perform_inference(test_data[index: new_index], test_data_labels[index: new_index], parameters)
-        index = new_index
-    print('HE-Transformer: {}/{} Test set: Accuracy: ({:.4f})'.format(correct_predictions, num_samples,
-                                                                      correct_predictions / num_samples))
+    if parameters.batch_mode:
+        num_samples = test_data.shape[0]
+        index = 0
+        correct_predictions = 0
+        while index < num_samples:
+            new_index = index + parameters.batch_size if index + parameters.batch_size < num_samples else num_samples
+            correct_predictions += perform_inference(test_data[index: new_index], test_data_labels[index: new_index], parameters)
+            index = new_index
+        print('HE-Transformer: {}/{} Test set: Accuracy: ({:.4f})'.format(correct_predictions, num_samples,
+                                                                          correct_predictions / num_samples))
+    else:
+        perform_inference(test_data[start_batch: end_batch], test_data_labels[start_batch: end_batch], parameters)
 
