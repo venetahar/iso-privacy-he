@@ -7,6 +7,7 @@ def perform_inference(test_data, test_data_labels, parameters):
     num_classes = test_data_labels.shape[1]
     test_data_flat = test_data.flatten("C")
 
+    start_time = time.time()
     client = pyhe_client.HESealClient(
         parameters.hostname,
         parameters.port,
@@ -16,7 +17,6 @@ def perform_inference(test_data, test_data_labels, parameters):
         })
 
     print("Waiting for results.")
-    start_time = time.time()
     prediction_scores = np.array(client.get_results()).reshape(parameters.batch_size, num_classes)
     end_time = time.time()
     print("Got predictions with shape {} in time: {}".format(prediction_scores.shape, end_time - start_time))
