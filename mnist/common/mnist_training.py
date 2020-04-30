@@ -44,13 +44,9 @@ def preprocess(data, labels):
 
 
 def normalize(data):
+    """
+    Normalizes the data.
+    :param data: The data.
+    :return: Normalized data.
+    """
     return (data/255.0 - MNIST_NORM_MEAN) / MNIST_NORM_STD
-
-
-# def test_saved_model(model_path):
-#     (_, _), (test_data, test_labels) = mnist.load_data()
-#     test_data, test_labels = preprocess(test_data, test_labels)
-#
-#     new_model = DataUtils.load_model(model_path + '.pb')
-#     new_model.evaluate(test_data, test_labels)
-#

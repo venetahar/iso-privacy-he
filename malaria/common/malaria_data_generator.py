@@ -4,8 +4,16 @@ from malaria.common.constants import MALARIA_NORM_MEAN, MALARIA_NORM_STD
 
 
 class MalariaDataGenerator:
+    """
+    Creates a train and test Malaria data generators.
+    """
 
     def __init__(self, data_path, parameters):
+        """
+        Creates a MalariaDataGenerator.
+        :param data_path: The data path containing both training and test data.
+        :param parameters: The parameters.
+        """
 
         self.parameters = parameters
 
@@ -32,6 +40,9 @@ class MalariaDataGenerator:
         )
 
     def normalize(self, data):
+        """
+        Normalizes the data.
+        :param data: The data.
+        :return: Normalized data.
+        """
         return (data/255.0 - MALARIA_NORM_MEAN) / MALARIA_NORM_STD
-
-

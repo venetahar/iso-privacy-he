@@ -47,7 +47,7 @@ class DataUtils:
         :param path_prefix: The path prefix.
         """
         np.save(path_prefix + 'data', data)
-        np.save(path_prefix + 'labels', labels)
+        np.save(path_prefix + 'data_labels', labels)
 
     @staticmethod
     def sava_data_generator(data_generator, data_path_prefix):
