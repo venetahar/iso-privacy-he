@@ -2,7 +2,7 @@
 
 Hosts the code necessary to run experiments on HE-Transformer. 
 
-First you need to have build the HE-Transformer: https://github.com/IntelAI/he-transformer/
+First you need to have built the HE-Transformer: https://github.com/IntelAI/he-transformer/
 
 To run the HE-Transformer experiments do the following steps:
 1. Copy the iso-privacy-he directory to $HE_TRANSFORMER_INSTALLATION_DIR$/examples/
@@ -25,3 +25,4 @@ To run the HE-Transformer experiments do the following steps:
 
 You can do the same with the malaria experiments just replace mnist_server with malaria_server, 
 mnist_client with malaria_client and put the alice_conv_pool_model.pb as the model name.
+You can control the start index of the predictions using start_batch. 
