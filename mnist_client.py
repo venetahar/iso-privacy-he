@@ -9,8 +9,8 @@ if __name__ == "__main__":
         print("Supplied parameters cannot be parsed", unparsed)
         exit(1)
 
-    test_data = np.load('mnist/bob_test_data.npy')
-    test_data_labels = np.load('mnist/bob_test_data_labels.npy')
+    test_data = np.load('mnist/data/bob_test_data.npy')
+    test_data_labels = np.load('mnist/data/bob_test_data_labels.npy')
     start_batch = parameters.start_batch
     end_batch = start_batch + parameters.batch_size
     perform_inference(test_data[start_batch: end_batch], test_data_labels[start_batch: end_batch], parameters)

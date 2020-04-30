@@ -1,6 +1,6 @@
-from malaria.common.conv_pool_model import conv_pool_model
-from mnist.common.conv_model import conv_model
-from mnist.common.fully_connected_model import fully_connected_model
+from malaria.conv_pool_model import conv_pool_model
+from mnist.conv_model import conv_model
+from mnist.fully_connected_model import fully_connected_model
 
 FULLY_CONNECTED_MODEL_TYPE = 'FullyConnected3'
 CONV_MODEL_TYPE = 'Conv1'

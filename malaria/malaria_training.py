@@ -1,9 +1,9 @@
 from common.model_factory import ModelFactory, CONV_POOL_MODEL_TYPE
 from common.model_training import ModelTraining
-from common.utils.data_utils import DataUtils
-from malaria.common.constants import NUM_CLASSES, \
+from common.data_utils import DataUtils
+from malaria.constants import NUM_CLASSES, \
     MALARIA_INPUT_SHAPE, TRAINING_PARAMS, TEST_BATCH_SIZE, TRAIN_BATCH_SIZE, TEST_PERCENTAGE, IMG_RESIZE
-from malaria.common.malaria_data_generator import MalariaDataGenerator
+from malaria.malaria_data_generator import MalariaDataGenerator
 
 
 def train_malaria_model(model_path, model_name, source_data_path, target_data_path_prefix):

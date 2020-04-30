@@ -1,6 +1,6 @@
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-from malaria.common.constants import MALARIA_NORM_MEAN, MALARIA_NORM_STD
+from malaria.constants import MALARIA_NORM_MEAN, MALARIA_NORM_STD
 
 
 class MalariaDataGenerator:

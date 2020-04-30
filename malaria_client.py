@@ -9,8 +9,8 @@ if __name__ == "__main__":
         print("Supplied parameters cannot be parsed", unparsed)
         exit(1)
 
-    test_data = np.load('malaria/bob_test_data.npy')
-    test_data_labels = np.load('malaria/bob_test_data_labels.npy')
+    test_data = np.load('malaria/data/bob_test_data.npy')
+    test_data_labels = np.load('malaria/data/bob_test_data_labels.npy')
 
     start_batch = parameters.start_batch
     end_batch = start_batch + parameters.batch_size
@@ -22,7 +22,8 @@ if __name__ == "__main__":
         correct_predictions = 0
         while index < num_samples:
             new_index = index + parameters.batch_size if index + parameters.batch_size < num_samples else num_samples
-            correct_predictions += perform_inference(test_data[index: new_index], test_data_labels[index: new_index], parameters)
+            correct_predictions += perform_inference(test_data[index: new_index], test_data_labels[index: new_index],
+                                                     parameters)
             index = new_index
         print('HE-Transformer: {}/{} Test set: Accuracy: ({:.4f})'.format(correct_predictions, num_samples,
                                                                           correct_predictions / num_samples))

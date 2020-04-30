@@ -2,6 +2,11 @@ import argparse
 
 
 def client_argument_parser():
+    """
+    Creates a client argumnet parser. Based on the example provided here:
+
+    :return:
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument("--batch_size", type=int, default=1, help="Batch size. Default 1.")
     parser.add_argument("--hostname", type=str, default="localhost", help="Hostname of server. Default localhost.")

@@ -19,3 +19,8 @@ TRAINING_PARAMS = {
 
 MALARIA_INPUT_SHAPE = (32, 32, 3)
 NUM_CLASSES = 2
+
+MALARIA_MODEL_PATH = 'malaria/models/'
+MALARIA_DATA_PATH = 'malaria/data/cell_images/'
+MALARIA_MODEL_NAME = 'alice_conv_pool_model'
+MALARIA_TARGET_DATA_PATH_PREFIX = 'malaria/bob_test_'

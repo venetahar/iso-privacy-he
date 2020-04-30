@@ -3,8 +3,8 @@ from tensorflow.keras.utils import to_categorical
 
 from common.model_factory import ModelFactory
 from common.model_training import ModelTraining
-from common.utils.data_utils import DataUtils
-from mnist.common.constants import NUM_CLASSES, TRAINING_PARAMS, MNIST_WIDTH, MNIST_HEIGHT, NUM_CHANNELS, \
+from common.data_utils import DataUtils
+from mnist.constants import NUM_CLASSES, TRAINING_PARAMS, MNIST_WIDTH, MNIST_HEIGHT, NUM_CHANNELS, \
     INPUT_SHAPE, MNIST_NORM_MEAN, MNIST_NORM_STD
 
 
