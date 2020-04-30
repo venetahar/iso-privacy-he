@@ -3,8 +3,8 @@ import argparse
 
 def client_argument_parser():
     """
-    Creates a client argumnet parser. Based on the example provided here:
-
+    Creates a client argument parser. Based on the example provided here:
+    https://github.com/IntelAI/he-transformer/blob/master/examples/MNIST/mnist_util.py
     :return:
     """
     parser = argparse.ArgumentParser()
@@ -23,6 +23,11 @@ def client_argument_parser():
 
 
 def server_argument_parser():
+    """
+    Creates a server argument parser. Based on the example provided here:
+    https://github.com/IntelAI/he-transformer/blob/master/examples/MNIST/mnist_util.py
+    :return:
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument("--batch_size", type=int, default=1, help="Batch size")
     parser.add_argument("--enable_client", type=bool, default=False, help="Enable the client")

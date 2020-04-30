@@ -8,6 +8,12 @@ from utils import load_pb_model
 
 
 def perform_inference(test_data, test_labels, parameters):
+    """
+    Performs inference. Based on: https://github.com/IntelAI/he-transformer/blob/master/examples/MNIST/test.py
+    :param test_data: The test data, will be ignored if enabled_client is True.
+    :param test_labels: The test labels, will be ignored if enabled_client is True.
+    :param parameters: The parameters.
+    """
     tf.import_graph_def(load_pb_model(parameters.model_file))
     print("Loaded model")
 
@@ -31,6 +37,12 @@ def perform_inference(test_data, test_labels, parameters):
 
 
 def calculate_num_correct_predictions(prediction_scores, one_hot_labels):
+    """
+    Calculates the correct predictions.
+    :param prediction_scores: The prediction scores.
+    :param one_hot_labels: The one hot labels.
+    :return:
+    """
     predictions = prediction_scores.argmax(axis=1)
     labels = np.where(one_hot_labels == 1)[1]
     return np.sum(predictions == labels)
